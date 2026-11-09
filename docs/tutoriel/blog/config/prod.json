@@ -1,0 +1,14 @@
+{
+  "journal": "json",
+  "server": {
+    "host": "127.0.0.1",
+    "workers": 0,
+    "trusted_proxies": [
+      "127.0.0.1",
+      "::1"
+    ]
+  },
+  "mail": {
+    "url": ""
+  }
+}

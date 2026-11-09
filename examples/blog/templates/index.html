@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block contenu %}
+{% for a in page.items %}
+<article class="resume{% if a.photo %} avec-photo{% endif %}">
+  {% if a.photo %}<a class="vignette" href="{{ url_for('article', {'id': a.id}) }}"><img src="{{ media(a.photo.vignette) }}" width="240" height="135" loading="lazy" alt=""></a>{% endif %}
+  <div>
+  <h2><a href="{{ url_for('article', {'id': a.id}) }}">{{ a.titre }}</a></h2>
+  <p class="meta">par {{ a.auteur.nom }}{% if a.piece %} · 📎 pièce jointe{% endif %}</p>
+  <p>{{ a.texte | truncate(220) }}</p>
+  </div>
+</article>
+{% else %}
+<p>Aucun article pour l'instant.</p>
+{% endfor %}
+<div class="pagination">
+  {% if page.has_prev %}<a href="/?page={{ page.page - 1 }}">← plus récents</a>{% endif %}
+  {% if page.has_next %}<a href="/?page={{ page.page + 1 }}">plus anciens →</a>{% endif %}
+</div>
+{% endblock %}

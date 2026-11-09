@@ -1,0 +1,13 @@
+{
+  "database": {
+    "url": "memory:"
+  },
+  "secret_key": "f033d4f9d312b3f340bb6ea46713d6b88b90e483664ae3b5",
+  "auth": {
+    "iterations": 1000
+  },
+  "mail": {
+    "url": "memory"
+  },
+  "site_url": "https://blog.test"
+}

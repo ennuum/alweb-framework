@@ -1,0 +1,47 @@
+
+/* ---------------------------------------------------------------- blog (modèle « blog ») */
+.intro-blog { padding: clamp(40px, 7vw, 72px) 0 8px; border-bottom: 1px solid #e2e8f0; }
+.intro-blog h1 { font-family: var(--typographie-lecture); font-size: clamp(2.2rem, 5vw, 3.4rem); margin-bottom: .2em; }
+.intro-blog .chapeau { margin-top: 0; }
+.categories-ligne { display: flex; flex-wrap: wrap; gap: 8px 22px; padding: 20px 0 24px; }
+.categories-ligne a { color: var(--couleurs-secondaire); text-decoration: none; font-weight: 600; font-size: .95rem; }
+.categories-ligne a:hover { color: var(--couleurs-primaire); }
+.categorie { margin: 0 0 .3em; color: var(--couleurs-primaire); font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.une { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(20px, 4vw, 48px); align-items: center; margin-bottom: clamp(40px, 6vw, 64px); }
+.une-image { display: block; border-radius: 16px; overflow: hidden; aspect-ratio: 16 / 10; background: var(--couleurs-doux); }
+.une-image img, .vignette-image img, .ligne-image img, .lecture-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.une h2 { font-family: var(--typographie-lecture); font-size: clamp(1.7rem, 3.2vw, 2.4rem); margin: .1em 0 .4em; }
+.une h2 a, .vignette h3 a, .ligne-article h2 a { color: inherit; text-decoration: none; }
+.une h2 a:hover, .vignette h3 a:hover, .ligne-article h2 a:hover { color: var(--couleurs-primaire); }
+.grille-articles { display: grid; gap: 32px 24px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.vignette-image { display: block; border-radius: 12px; overflow: hidden; aspect-ratio: 16 / 10; margin-bottom: 14px; background: var(--couleurs-doux); }
+.vignette h3 { font-family: var(--typographie-lecture); font-size: 1.25rem; margin: .1em 0 .35em; }
+.vignette p { margin: 0 0 .5em; }
+.tout-voir { margin-top: 40px; text-align: center; }
+.liste-articles { display: grid; gap: 28px; }
+.ligne-article { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 22px; padding-bottom: 28px; border-bottom: 1px solid #e2e8f0; }
+.ligne-image { display: block; border-radius: 12px; overflow: hidden; aspect-ratio: 4 / 3; background: var(--couleurs-doux); }
+.ligne-article h2 { font-family: var(--typographie-lecture); font-size: 1.45rem; margin: .1em 0 .3em; }
+.ligne-article p { margin: 0 0 .5em; }
+.avec-barre { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 48px; align-items: start; }
+.barre section + section { margin-top: 20px; }
+.barre ul { list-style: none; padding: 0; margin: 0; }
+.barre li { padding: 5px 0; }
+.barre li a { color: var(--couleurs-secondaire); text-decoration: none; }
+.barre li a:hover, .barre li a[aria-current="page"] { color: var(--couleurs-primaire); }
+.barre .bouton { margin-top: 20px; }
+.lecture { padding: clamp(32px, 6vw, 64px) 0 clamp(40px, 7vw, 80px); }
+.lecture-entete h1 { font-family: var(--typographie-lecture); font-size: clamp(2rem, 4.6vw, 3rem); margin: .3em 0 .3em; }
+.lecture-image { margin-block: 28px; }
+.lecture-image img { border-radius: 16px; max-height: 520px; }
+.texte-article { font-family: var(--typographie-lecture); font-size: 1.15em; line-height: 1.8; }
+@media (max-width: 960px) {
+  .grille-articles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .avec-barre { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .une { grid-template-columns: 1fr; }
+  .grille-articles { grid-template-columns: 1fr; }
+  .ligne-article { grid-template-columns: 110px minmax(0, 1fr); gap: 14px; }
+  .ligne-article h2 { font-size: 1.15rem; }
+}

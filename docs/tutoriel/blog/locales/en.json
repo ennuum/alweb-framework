@@ -1,0 +1,19 @@
+{
+  "Écrire": "Write",
+  "Se déconnecter": "Sign out",
+  "Connexion": "Sign in",
+  "Inscription": "Sign up",
+  "Confirmez votre adresse ({courriel}) avec le lien reçu par courriel.": "Please confirm your address ({courriel}) using the link we emailed you.",
+  "Renvoyer le lien": "Resend the link",
+  "Propulsé par alweb": "Powered by alweb",
+  "par {nom}, le {date}": "by {nom}, {date}",
+  "Aucun article pour l'instant.": "No posts yet.",
+  "plus récents": "newer",
+  "plus anciens": "older",
+  "Modifier": "Edit",
+  "Supprimer": "Delete",
+  "commentaires": {
+    "one": "{n} comment",
+    "other": "{n} comments"
+  }
+}

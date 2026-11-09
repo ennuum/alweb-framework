@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block titre %}{{ _("À propos") }} — {{ super() }}{% endblock %}
+{% block contenu %}
+<section class="section">
+  <div class="conteneur etroit">
+    <h1>{{ _("À propos") }}</h1>
+    <p class="chapeau">{{ presentation | default(theme.site.slogan) }}</p>
+  </div>
+</section>
+{% if equipe %}
+<section class="section doux">
+  <div class="conteneur">
+    <h2 class="titre-section">{{ _("L'équipe") }}</h2>
+    <div class="grille equipe">
+    {% for p in equipe %}
+      <div class="carte personne"><div class="initiale" aria-hidden="true">{{ p.nom[0:1] }}</div><h3>{{ p.nom }}</h3><p>{{ p.role }}</p></div>
+    {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% import "_champs.html" as champs %}
+{% block contenu %}
+<h2>{{ 'Modifier' if article else 'Nouvel article' }}</h2>
+<form method="post" class="carte">
+  {{ csrf_field() }}
+  {{ champs.texte(form, "titre", "Titre") }}
+  <label for="texte">Texte</label>
+  <textarea id="texte" name="texte">{{ form.values.texte }}</textarea>
+  {% if form.error('texte') %}<p class="erreur">{{ form.error('texte') }}</p>{% endif %}
+  <button>Enregistrer</button>
+</form>
+{% endblock %}

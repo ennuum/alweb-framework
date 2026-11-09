@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% import "components/projets.html" as pj %}
+{% block titre %}{{ projet.titre }} — {{ super() }}{% endblock %}
+{% block description %}{{ projet.resume | default(theme.site.slogan) }}{% endblock %}
+{% block contenu %}
+<article class="section">
+  <div class="conteneur">
+    <p class="meta"><a href="{{ projets_url | default('/projets') }}">← {{ _("Projets") }}</a></p>
+    <header class="projet-entete">
+      <h1>{{ projet.titre }}</h1>
+      {% if projet.resume %}<p class="chapeau">{{ projet.resume }}</p>{% endif %}
+    </header>
+    {% if projet.image %}<div class="projet-visuel"><img src="{{ projet.image }}" alt="{{ projet.titre }}"></div>{% endif %}
+    <div class="projet-corps">
+      <dl class="projet-infos">
+        {% if projet.client %}<dt>{{ _("Client") }}</dt><dd>{{ projet.client }}</dd>{% endif %}
+        {% if projet.categorie %}<dt>{{ _("Catégorie") }}</dt><dd>{{ projet.categorie }}</dd>{% endif %}
+        {% if projet.annee %}<dt>{{ _("Année") }}</dt><dd>{{ projet.annee }}</dd>{% endif %}
+        {% if projet.lien %}<dt>{{ _("En ligne") }}</dt><dd><a href="{{ projet.lien }}" rel="noopener">{{ _("Voir le site") }} ↗</a></dd>{% endif %}
+      </dl>
+      <div class="texte">{{ projet.description | nl2br }}</div>
+    </div>
+    {% if projet.images %}<div class="galerie">{% for i in projet.images %}<img src="{{ i }}" alt="" loading="lazy">{% endfor %}</div>{% endif %}
+  </div>
+</article>
+{% if autres %}
+<section class="section doux">
+  <div class="conteneur">
+    <h2 class="titre-section">{{ _("Autres projets") }}</h2>
+    {{ pj.grille(autres) }}
+  </div>
+</section>
+{% endif %}
+{% endblock %}

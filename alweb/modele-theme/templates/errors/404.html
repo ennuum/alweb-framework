@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block titre %}{{ title | default(_("Page introuvable")) }} — {{ super() }}{% endblock %}
+{% block contenu %}
+<section class="section">
+  <div class="conteneur etroit erreur-page">
+    <p class="code">{{ status | default(404) }}</p>
+    <h1>{{ title | default(_("Page introuvable")) }}</h1>
+    {% if hint %}<p>{{ hint }}</p>{% endif %}
+    <a class="bouton" href="{{ home | default('/') }}">{{ _("Retour à l'accueil") }}</a>
+  </div>
+</section>
+{% endblock %}

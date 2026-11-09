@@ -1,0 +1,175 @@
+{
+  "commun": {},
+  "index": {
+    "projets": [
+      {
+        "titre": "Atelier Mira",
+        "url": "/projets/detail",
+        "image": "/theme/images/exemples/identite.svg",
+        "categorie": "Identité visuelle",
+        "annee": 2026,
+        "resume": "Logo, couleurs et papeterie pour un atelier de céramique."
+      },
+      {
+        "titre": "Festival Lumen",
+        "url": "/projets/detail",
+        "image": "/theme/images/exemples/affiche.svg",
+        "categorie": "Affiche",
+        "annee": 2026,
+        "resume": "Série d'affiches pour un festival de musique électronique."
+      },
+      {
+        "titre": "Appli Vélo+",
+        "url": "/projets/detail",
+        "image": "/theme/images/exemples/appli.svg",
+        "categorie": "Interface",
+        "annee": 2025,
+        "resume": "Application de location de vélos : parcours, écrans et prototype."
+      },
+      {
+        "titre": "Revue Terrain",
+        "url": "/projets/detail",
+        "image": "/theme/images/exemples/edition.svg",
+        "categorie": "Édition",
+        "annee": 2025,
+        "resume": "Maquette d'une revue trimestrielle de 96 pages."
+      }
+    ],
+    "competences": [
+      {
+        "titre": "Identité visuelle",
+        "texte": "Logos, chartes et déclinaisons qui tiennent dans le temps."
+      },
+      {
+        "titre": "Édition",
+        "texte": "Livres, revues, rapports : mise en page soignée et lisible."
+      },
+      {
+        "titre": "Web",
+        "texte": "Sites et interfaces simples, rapides et accessibles."
+      }
+    ]
+  },
+  "projets/index": {
+    "projets": [
+      {
+        "titre": "Atelier Mira",
+        "url": "/projets/detail",
+        "image": "/theme/images/exemples/identite.svg",
+        "categorie": "Identité visuelle",
+        "annee": 2026,
+        "resume": "Logo, couleurs et papeterie pour un atelier de céramique."
+      },
+      {
+        "titre": "Festival Lumen",
+        "url": "/projets/detail",
+        "image": "/theme/images/exemples/affiche.svg",
+        "categorie": "Affiche",
+        "annee": 2026,
+        "resume": "Série d'affiches pour un festival de musique électronique."
+      },
+      {
+        "titre": "Appli Vélo+",
+        "url": "/projets/detail",
+        "image": "/theme/images/exemples/appli.svg",
+        "categorie": "Interface",
+        "annee": 2025,
+        "resume": "Application de location de vélos : parcours, écrans et prototype."
+      },
+      {
+        "titre": "Revue Terrain",
+        "url": "/projets/detail",
+        "image": "/theme/images/exemples/edition.svg",
+        "categorie": "Édition",
+        "annee": 2025,
+        "resume": "Maquette d'une revue trimestrielle de 96 pages."
+      },
+      {
+        "titre": "Thé Sauvage",
+        "url": "/projets/detail",
+        "image": "/theme/images/exemples/packaging.svg",
+        "categorie": "Packaging",
+        "annee": 2024,
+        "resume": "Boîtes et étiquettes pour une gamme de thés bio."
+      },
+      {
+        "titre": "Studio Rosa",
+        "url": "/projets/detail",
+        "image": "/theme/images/exemples/site.svg",
+        "categorie": "Site web",
+        "annee": 2024,
+        "resume": "Site vitrine d'un studio de danse, réservation en ligne."
+      }
+    ],
+    "categories": [
+      {
+        "nom": "Affiche",
+        "url": "/projets",
+        "actif": false
+      },
+      {
+        "nom": "Identité visuelle",
+        "url": "/projets",
+        "actif": false
+      },
+      {
+        "nom": "Interface",
+        "url": "/projets",
+        "actif": false
+      },
+      {
+        "nom": "Packaging",
+        "url": "/projets",
+        "actif": false
+      },
+      {
+        "nom": "Site web",
+        "url": "/projets",
+        "actif": false
+      },
+      {
+        "nom": "Édition",
+        "url": "/projets",
+        "actif": false
+      }
+    ]
+  },
+  "projets/detail": {
+    "projet": {
+      "titre": "Atelier Mira",
+      "url": "/projets/detail",
+      "image": "/theme/images/exemples/identite.svg",
+      "categorie": "Identité visuelle",
+      "annee": 2026,
+      "resume": "Logo, couleurs et papeterie pour un atelier de céramique.",
+      "client": "Atelier Mira, Lyon",
+      "lien": "https://exemple.fr",
+      "description": "L'atelier voulait une identité aussi simple que ses pièces : un monogramme tracé d'un seul geste, une palette tirée des émaux et une typographie sobre.\n\nLe système se décline sur les étiquettes, le papier à en-tête et le site.",
+      "images": [
+        "/theme/images/exemples/identite.svg",
+        "/theme/images/exemples/edition.svg"
+      ]
+    },
+    "autres": [
+      {
+        "titre": "Festival Lumen",
+        "url": "/projets/detail",
+        "image": "/theme/images/exemples/affiche.svg",
+        "categorie": "Affiche",
+        "annee": 2026,
+        "resume": "Série d'affiches pour un festival de musique électronique."
+      },
+      {
+        "titre": "Appli Vélo+",
+        "url": "/projets/detail",
+        "image": "/theme/images/exemples/appli.svg",
+        "categorie": "Interface",
+        "annee": 2025,
+        "resume": "Application de location de vélos : parcours, écrans et prototype."
+      }
+    ]
+  },
+  "about": {
+    "presentation": "Je travaille depuis dix ans avec des marques, des éditeurs et des associations."
+  }
+}

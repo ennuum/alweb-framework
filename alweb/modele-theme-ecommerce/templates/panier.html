@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% import "components/boutique.html" as b %}
+{% block titre %}{{ _("Panier") }} — {{ super() }}{% endblock %}
+{% block contenu %}
+<section class="section">
+  <div class="conteneur">
+    <h1>{{ _("Panier") }}</h1>
+    {% if lignes %}
+    <form method="post" action="{{ maj_action | default('/panier') }}">
+      {% if csrf_field %}{{ csrf_field() }}{% endif %}
+      <div class="tableau-panier">
+        {% for l in lignes %}
+        <div class="ligne-panier">
+          {% if l.image %}<img src="{{ l.image }}" alt="" width="72" height="72">{% endif %}
+          <div class="ligne-nom"><a href="{{ l.url }}">{{ l.nom }}</a><p class="meta">{{ b.prix(l.prix) }}</p></div>
+          <label class="ligne-quantite"><span class="visuellement-cache">{{ _("Quantité") }}</span><input name="q_{{ l.id }}" type="number" min="0" value="{{ l.quantite }}"></label>
+          <div class="ligne-total">{{ b.prix(l.total) }}</div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="panier-pied">
+        <button type="submit" class="bouton clair">{{ _("Mettre à jour") }}</button>
+        <p class="panier-total">{{ _("Total") }} : {{ b.prix(total) }}</p>
+      </div>
+    </form>
+    <p class="panier-actions"><a href="{{ boutique_url | default('/boutique') }}">← {{ _("Continuer mes achats") }}</a> <a class="bouton" href="{{ commande_url | default('/commande') }}">{{ _("Commander") }}</a></p>
+    {% else %}
+    <p class="vide">{{ _("Votre panier est vide.") }}</p>
+    <a class="bouton" href="{{ boutique_url | default('/boutique') }}">{{ _("Voir la boutique") }}</a>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% import "components/boutique.html" as b %}
+{% block titre %}{{ categorie | default(_("Boutique")) }} — {{ super() }}{% endblock %}
+{% block contenu %}
+<section class="section">
+  <div class="conteneur">
+    <h1>{{ categorie | default(_("Boutique")) }}</h1>
+    {% if categories %}
+    <nav class="filtres" aria-label="{{ _('Rayons') }}">
+      <a href="{{ boutique_url | default('/boutique') }}"{% if not categorie %} aria-current="page"{% endif %}>{{ _("Tout") }}</a>
+      {% for c in categories %}<a href="{{ c.url }}"{% if c.actif %} aria-current="page"{% endif %}>{{ c.nom }}</a>{% endfor %}
+    </nav>
+    {% endif %}
+    {% if produits %}{{ b.grille(produits) }}{% else %}<p class="vide">{{ _("Aucun produit dans ce rayon.") }}</p>{% endif %}
+  </div>
+</section>
+{% endblock %}

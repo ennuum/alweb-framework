@@ -1,0 +1,5 @@
+{% macro texte(form, nom, libelle, type="text") %}
+<label for="{{ nom }}">{{ libelle }}</label>
+<input type="{{ type }}" id="{{ nom }}" name="{{ nom }}" value="{{ form.values[nom] if type != 'password' and nom in form.values else '' }}">
+{% if form.error(nom) %}<p class="erreur">{{ form.error(nom) }}</p>{% endif %}
+{% endmacro %}

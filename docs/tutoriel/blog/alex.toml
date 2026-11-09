@@ -1,0 +1,9 @@
+[package]
+name = "blog"
+version = "0.1.0"
+description = "Blog multi-utilisateur du tutoriel alweb"
+entry = "main.al"
+alex = ">=1.3.0-beta.1"
+
+[dependencies]
+alweb = { path = "../../../alweb" }

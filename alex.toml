@@ -1,0 +1,7 @@
+[package]
+name = "alweb"
+version = "0.9.0"
+entry = "examples/notes.al"
+alex = ">=1.3.0-beta.1"
+
+[dependencies]

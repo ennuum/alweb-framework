@@ -1,0 +1,4 @@
+{
+  "debug": true,
+  "secret_key": "clé-de-développement-à-ne-pas-utiliser-en-production"
+}

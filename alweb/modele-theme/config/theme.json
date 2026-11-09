@@ -1,0 +1,117 @@
+{
+  "site": {
+    "nom": {
+      "type": "text",
+      "default": "Modern Business",
+      "label": "Nom du site"
+    },
+    "slogan": {
+      "type": "text",
+      "default": "Des solutions simples pour des projets ambitieux.",
+      "label": "Slogan"
+    }
+  },
+  "couleurs": {
+    "primaire": {
+      "type": "color",
+      "default": "#e87524",
+      "label": "Couleur principale"
+    },
+    "secondaire": {
+      "type": "color",
+      "default": "#20242b",
+      "label": "Couleur secondaire"
+    },
+    "fond": {
+      "type": "color",
+      "default": "#ffffff",
+      "label": "Fond"
+    },
+    "texte": {
+      "type": "color",
+      "default": "#1d2330",
+      "label": "Texte"
+    },
+    "doux": {
+      "type": "color",
+      "default": "#f5f6f8",
+      "label": "Fond des sections"
+    }
+  },
+  "typographie": {
+    "police": {
+      "type": "font",
+      "default": "Inter, system-ui, -apple-system, Segoe UI, sans-serif",
+      "label": "Police"
+    },
+    "taille": {
+      "type": "size",
+      "default": "17px",
+      "label": "Taille du texte"
+    }
+  },
+  "mise_en_page": {
+    "largeur": {
+      "type": "size",
+      "default": "1120px",
+      "label": "Largeur du contenu"
+    },
+    "barre_laterale": {
+      "type": "bool",
+      "default": true,
+      "label": "Barre latérale du blog"
+    }
+  },
+  "logo": {
+    "type": "image",
+    "default": "images/logo.svg",
+    "label": "Logo"
+  },
+  "menu": {
+    "type": "links",
+    "default": [
+      {
+        "label": "Accueil",
+        "url": "/"
+      },
+      {
+        "label": "Services",
+        "url": "/services"
+      },
+      {
+        "label": "À propos",
+        "url": "/about"
+      },
+      {
+        "label": "Blog",
+        "url": "/blog"
+      },
+      {
+        "label": "Contact",
+        "url": "/contact"
+      }
+    ],
+    "label": "Menu"
+  },
+  "reseaux": {
+    "type": "links",
+    "default": [
+      {
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/"
+      }
+    ],
+    "label": "Réseaux sociaux"
+  },
+  "pied": {
+    "texte": {
+      "type": "text",
+      "default": "Tous droits réservés.",
+      "label": "Texte du pied de page"
+    }
+  }
+}

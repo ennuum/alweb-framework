@@ -1,0 +1,37 @@
+
+/* ---------------------------------------------------------------- portfolio (modèle « portfolio ») */
+h1, h2, h3, .marque { font-family: var(--typographie-titres); letter-spacing: -.01em; }
+.presentation { padding: clamp(64px, 12vw, 140px) 0 clamp(40px, 7vw, 72px); }
+.presentation h1 { font-size: clamp(2.6rem, 7vw, 5.2rem); line-height: 1.02; margin: 0 0 .3em; max-width: 14ch; }
+.presentation-texte { font-size: clamp(1.15rem, 2.2vw, 1.5rem); max-width: 34ch; color: #44403c; margin: 0 0 32px; }
+.presentation-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; }
+.lien-courriel { color: var(--couleurs-secondaire); font-weight: 600; }
+.disponible { display: inline-flex; align-items: center; gap: 10px; padding: 6px 14px; border-radius: 999px; background: var(--couleurs-doux); font-size: .9rem; font-weight: 600; margin: 0 0 24px; }
+.disponible span { width: 9px; height: 9px; border-radius: 50%; background: #16a34a; box-shadow: 0 0 0 4px rgba(22, 163, 74, .18); }
+.grille-projets { display: grid; gap: 40px 28px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.projet { display: block; color: inherit; text-decoration: none; }
+.projet-image { display: block; border-radius: 16px; overflow: hidden; aspect-ratio: 4 / 3; background: var(--couleurs-doux); }
+.projet-image img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
+.projet:hover .projet-image img { transform: scale(1.04); }
+.projet-legende { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 14px; }
+.projet-legende strong { font-family: var(--typographie-titres); font-size: 1.2rem; }
+.projet:hover .projet-legende strong { color: var(--couleurs-primaire); }
+.filtres { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; }
+.filtres a { padding: 8px 16px; border: 1px solid #d6d3d1; border-radius: 999px; text-decoration: none; color: var(--couleurs-secondaire); }
+.filtres a:hover, .filtres a[aria-current="page"] { background: var(--couleurs-secondaire); border-color: var(--couleurs-secondaire); color: #fff; }
+.competences { display: grid; gap: 28px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.competences h3 { margin-bottom: .3em; }
+.competences p { margin: 0; color: #57534e; }
+.projet-entete { max-width: 760px; margin: 12px 0 32px; }
+.projet-entete h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); margin-bottom: .25em; }
+.projet-visuel img, .galerie img { width: 100%; border-radius: 18px; display: block; }
+.projet-corps { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 48px; margin: 48px 0; }
+.projet-infos { margin: 0; display: grid; gap: 4px; align-content: start; }
+.projet-infos dt { font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: #78716c; margin-top: 12px; }
+.projet-infos dd { margin: 0; font-weight: 600; }
+.projet-corps .texte { font-size: 1.1rem; max-width: 62ch; }
+.galerie { display: grid; gap: 24px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 760px) {
+  .grille-projets, .competences, .galerie, .projet-corps { grid-template-columns: 1fr; }
+  .projet-corps { gap: 16px; }
+}

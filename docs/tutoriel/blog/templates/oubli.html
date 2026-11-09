@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% import "_champs.html" as champs %}
+{% block contenu %}
+<h2>Mot de passe oublié</h2>
+{% if envoye %}
+<p class="carte">Si un compte utilise cette adresse, un lien pour choisir un nouveau mot de passe vient de lui être
+envoyé. Il est valable une heure.</p>
+{% else %}
+<form method="post" class="carte">
+  {{ csrf_field() }}
+  {{ champs.texte(form, "courriel", "Adresse de courriel du compte", "email") }}
+  <button>Recevoir un lien</button>
+</form>
+{% endif %}
+{% endblock %}

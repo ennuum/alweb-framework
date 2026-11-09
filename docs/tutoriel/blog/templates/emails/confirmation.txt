@@ -1,0 +1,7 @@
+Bonjour {{ nom }},
+
+Pour confirmer l'adresse de votre compte sur {{ app_name }}, ouvrez ce lien :
+
+{{ lien }}
+
+Il est valable 3 jours. Si vous n'avez pas créé de compte, ignorez ce message.

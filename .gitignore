@@ -1,0 +1,14 @@
+/build/
+/dist/
+/alex_packages/
+*.albc
+*.al.meta
+alex_profile.json
+
+# configuration locale (non versionnée)
+config/local.json
+examples/config/local.json
+notes.db
+
+# site de l’exemple vitrine (thème installé, réglages, fichiers envoyés)
+examples/vitrine-site/

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% import "components/projets.html" as pj %}
+{% block titre %}{{ _("Projets") }} — {{ super() }}{% endblock %}
+{% block contenu %}
+<section class="section">
+  <div class="conteneur">
+    <h1>{{ categorie | default(_("Projets")) }}</h1>
+    {% if categories %}
+    <nav class="filtres" aria-label="{{ _('Catégories') }}">
+      <a href="{{ projets_url | default('/projets') }}"{% if not categorie %} aria-current="page"{% endif %}>{{ _("Tous") }}</a>
+      {% for c in categories %}<a href="{{ c.url }}"{% if c.actif %} aria-current="page"{% endif %}>{{ c.nom }}</a>{% endfor %}
+    </nav>
+    {% endif %}
+    {% if projets %}{{ pj.grille(projets) }}{% else %}<p class="vide">{{ _("Aucun projet dans cette catégorie.") }}</p>{% endif %}
+  </div>
+</section>
+{% endblock %}

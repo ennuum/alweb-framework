@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block titre %}{{ article.titre }} — {{ super() }}{% endblock %}
+{% block contenu %}
+<article class="carte">
+  <h2>{{ article.titre }}</h2>
+  <p class="meta">{{ _("par {nom}, le {date}", {"nom": article.auteur.nom, "date": i18n.date(article.cree_le, "long")}) }}</p>
+  <div>{{ article.texte | nl2br }}</div>
+  {% if peut_modifier %}
+  <p><a href="{{ url_for('modifier', {'id': article.id}) }}">{{ _("Modifier") }}</a></p>
+  <form method="post" action="{{ url_for('supprimer', {'id': article.id}) }}">{{ csrf_field() }}<button>{{ _("Supprimer") }}</button></form>
+  {% endif %}
+</article>
+<section>
+  {% set n = commentaires | length %}
+  <h3>{{ _n("commentaires", n) }}</h3>
+  {% for c in commentaires %}
+  <p class="commentaire"><strong>{{ c.auteur.nom }}</strong> : {{ c.texte }}</p>
+  {% endfor %}
+  {% if current_user %}
+  <form method="post" action="{{ url_for('commenter', {'id': article.id}) }}">
+    {{ csrf_field() }}
+    <label for="texte">Votre commentaire</label>
+    <textarea id="texte" name="texte"></textarea>
+    <button>Publier</button>
+  </form>
+  {% else %}
+  <p><a href="/connexion?next=/articles/{{ article.id }}">Connectez-vous</a> pour commenter.</p>
+  {% endif %}
+</section>
+{% endblock %}

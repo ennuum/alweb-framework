@@ -1,0 +1,12 @@
+{
+  "database": {
+    "url": "memory:"
+  },
+  "secret_key": "clé-de-test-suffisamment-longue-0123",
+  "auth": {
+    "iterations": 1000
+  },
+  "storage": {
+    "url": "memory:"
+  }
+}

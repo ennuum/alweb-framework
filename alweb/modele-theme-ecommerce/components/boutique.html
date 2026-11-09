@@ -1,0 +1,19 @@
+{# Composants de la boutique. Un produit : {nom, url, image, prix, prix_barre, categorie} ; les prix sont des textes
+   déjà formatés par l'application (« 24,90 »), la devise vient du réglage boutique.devise.
+   (Une macro importée ne peut pas en appeler une autre du même fichier : chacune est complète.) #}
+{% macro prix(montant, barre=null) %}<span class="prix">{{ montant }} {{ theme.boutique.devise }}</span>{% if barre %} <s class="prix-barre">{{ barre }} {{ theme.boutique.devise }}</s>{% endif %}{% endmacro %}
+
+{% macro grille(produits) %}
+<div class="grille-produits colonnes-{{ theme.boutique.colonnes | default('3') }}">
+{% for p in produits %}
+<article class="produit">
+  <a class="produit-image" href="{{ p.url }}">{% if p.image %}<img src="{{ p.image }}" alt="" loading="lazy">{% endif %}{% if p.prix_barre %}<span class="etiquette-promo">{{ _("Promo") }}</span>{% endif %}</a>
+  <div class="produit-corps">
+    {% if p.categorie %}<p class="meta">{{ p.categorie }}</p>{% endif %}
+    <h3><a href="{{ p.url }}">{{ p.nom }}</a></h3>
+    <p class="produit-prix"><span class="prix">{{ p.prix }} {{ theme.boutique.devise }}</span>{% if p.prix_barre %} <s class="prix-barre">{{ p.prix_barre }} {{ theme.boutique.devise }}</s>{% endif %}</p>
+  </div>
+</article>
+{% endfor %}
+</div>
+{% endmacro %}

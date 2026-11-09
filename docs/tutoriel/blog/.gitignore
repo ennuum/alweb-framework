@@ -1,0 +1,15 @@
+/build/
+/dist/
+/alex_packages/
+*.albc
+*.al.meta
+alex_profile.json
+
+# données et configuration locales (jamais versionnées)
+config/local.json
+.env
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+media/

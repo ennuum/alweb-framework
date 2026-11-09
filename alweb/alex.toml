@@ -1,0 +1,8 @@
+[package]
+name = "alweb"
+version = "0.9.0"
+description = "Framework web pour ALEX : routes async, gabarits, sessions, ORM, temps réel, OpenAPI, outils de projet"
+entry = "commande.al"
+alex = ">=1.3.0-beta.1"
+
+[dependencies]

@@ -1,0 +1,14 @@
+{% if theme.boutique.bandeau %}<div class="bandeau-annonce">{{ theme.boutique.bandeau }}</div>{% endif %}
+<header class="entete">
+  <div class="conteneur entete-contenu">
+    <a class="marque" href="/"><img src="{{ asset(theme.logo) }}" alt="" width="34" height="34"><span>{{ theme.site.nom }}</span></a>
+    <button class="menu-bouton" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="{{ _('Menu') }}"><span class="menu-icone" aria-hidden="true"><span></span><span></span><span></span></span></button>
+    <nav id="menu-principal" class="menu">
+      {% for l in theme.menu %}<a href="{{ l.url }}"{% if request and request.path() == l.url %} aria-current="page"{% endif %}>{{ l.label }}</a>{% endfor %}
+    </nav>
+    <a class="panier-lien" href="{{ panier_url | default('/panier') }}" aria-label="{{ _('Panier') }}">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20.5" r="1.3" fill="currentColor"/><circle cx="17" cy="20.5" r="1.3" fill="currentColor"/></svg>
+      {% if panier_nombre %}<span class="panier-nombre">{{ panier_nombre }}</span>{% endif %}
+    </a>
+  </div>
+</header>

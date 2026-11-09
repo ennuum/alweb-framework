@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% import "components/hero.html" as hero %}
+{% import "components/boutique.html" as b %}
+{% block contenu %}
+{{ hero.hero(theme.site.nom, theme.site.slogan, _("Voir la boutique"), "/boutique") }}
+
+{% if categories %}
+<section class="section">
+  <div class="conteneur">
+    <h2 class="titre-section">{{ _("Nos rayons") }}</h2>
+    <div class="rayons">{% for c in categories %}<a class="rayon" href="{{ c.url }}">{{ c.nom }}</a>{% endfor %}</div>
+  </div>
+</section>
+{% endif %}
+
+<section class="section{% if categories %} doux{% endif %}">
+  <div class="conteneur">
+    <h2 class="titre-section">{{ _("Sélection du moment") }}</h2>
+    {% if produits %}{{ b.grille(produits) }}{% else %}<p class="vide">{{ _("Aucun produit pour le moment.") }}</p>{% endif %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="conteneur atouts">
+    <div><h3>{{ _("Livraison rapide") }}</h3><p>{{ _("Expédition sous 48 h.") }}</p></div>
+    <div><h3>{{ _("Retours faciles") }}</h3><p>{{ _("30 jours pour changer d'avis.") }}</p></div>
+    <div><h3>{{ _("Service client") }}</h3><p><a href="/contact">{{ _("Une question ? Écrivez-nous.") }}</a></p></div>
+  </div>
+</section>
+{% endblock %}

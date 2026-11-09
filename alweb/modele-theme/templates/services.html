@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% import "components/cards.html" as cards %}
+{% block titre %}{{ _("Services") }} — {{ super() }}{% endblock %}
+{% block contenu %}
+<section class="section">
+  <div class="conteneur">
+    <h1>{{ _("Services") }}</h1>
+    {% if services %}
+    <div class="grille">
+    {% for s in services %}{{ cards.carte(s.titre, s.texte, s.lien, loop.index) }}{% endfor %}
+    </div>
+    {% else %}
+    <p class="vide">{{ _("Aucun service pour le moment.") }}</p>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

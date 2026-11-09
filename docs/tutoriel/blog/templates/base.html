@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}" dir="{{ lang_dir }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block titre %}{{ app_name }}{% endblock %}</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+  <h1><a href="{{ url_for('accueil') }}">{{ app_name }}</a></h1>
+  <nav>
+  {% if current_user %}
+    {{ current_user.nom }} · <a href="{{ url_for('ecrire') }}">{{ _("Écrire") }}</a>
+    <form method="post" action="{{ url_for('deconnexion') }}">{{ csrf_field() }}<button>{{ _("Se déconnecter") }}</button></form>
+  {% else %}
+    <a href="{{ url_for('connexion') }}">{{ _("Connexion") }}</a> · <a href="{{ url_for('inscription') }}">{{ _("Inscription") }}</a>
+  {% endif %}
+  </nav>
+</header>
+{% if current_user and current_user.courriel and not current_user.confirme %}
+<form method="post" action="{{ url_for('renvoyer_confirmation') }}" class="flash info">{{ csrf_field() }}
+{{ _("Confirmez votre adresse ({courriel}) avec le lien reçu par courriel.", {"courriel": current_user.courriel}) }} <button>{{ _("Renvoyer le lien") }}</button></form>
+{% endif %}
+{% for f in flashes() %}
+<p class="flash {{ f.category }}">{{ f.message }}</p>
+{% endfor %}
+<main>
+{% block contenu %}{% endblock %}
+</main>
+<footer>{{ _("Propulsé par alweb") }} ·
+{% for l in locales %}{% if l.current %}<strong>{{ l.name }}</strong>{% else %}<a href="{{ l.url }}" hreflang="{{ l.code }}" lang="{{ l.code }}">{{ l.name }}</a>{% endif %}{{ " · " if not loop.last }}{% endfor %}
+</footer>
+</body>
+</html>

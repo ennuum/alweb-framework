@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% import "_champs.html" as champs %}
+{% block contenu %}
+<h2>Nouveau mot de passe</h2>
+<form method="post" class="carte">
+  {{ csrf_field() }}
+  {{ champs.texte(form, "mdp", "Nouveau mot de passe (8 caractères au moins)", "password") }}
+  <button>Enregistrer</button>
+</form>
+{% endblock %}

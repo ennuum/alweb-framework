@@ -1,0 +1,7 @@
+{
+  "server": {
+    "host": "0.0.0.0",
+    "workers": 0
+  },
+  "journal_format": "json"
+}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block titre %}{{ article.titre }} — {{ super() }}{% endblock %}
+{% block contenu %}
+<article>
+  <h2>{{ article.titre }}</h2>
+  <p class="meta">par {{ article.auteur.nom }}</p>
+  {% if article.photo %}<img class="illustration" src="{{ media(article.photo.grande) }}" alt="">{% endif %}
+  <div>{{ article.texte | nl2br }}</div>
+  {% if article.piece %}
+  <p class="piece">📎 {% if current_user %}<a href="{{ url_for('piece', {'id': article.id}) }}">{{ article.piece.nom }}</a>{% else %}{{ article.piece.nom }} — <a href="/connexion?next=/articles/{{ article.id }}">connectez-vous</a> pour la télécharger{% endif %}
+    <small>(PDF, {{ ((article.piece.taille + 999) / 1000) | int }} ko)</small></p>
+  {% endif %}
+  {% if peut_modifier %}
+  <p><a href="{{ url_for('modifier', {'id': article.id}) }}">Modifier</a></p>
+  <form method="post" action="/articles/{{ article.id }}/supprimer">{{ csrf_field() }}<button>Supprimer</button></form>
+  {% endif %}
+</article>
+<section>
+  {% set n = commentaires | length %}
+  <h3>{{ n }} commentaire{{ 's' if n > 1 else '' }}</h3>
+  {% for c in commentaires %}
+  <p class="commentaire"><strong>{{ c.auteur.nom }}</strong> : {{ c.texte }}</p>
+  {% endfor %}
+  {% if current_user %}
+  <form method="post" action="/articles/{{ article.id }}/commentaires">
+    {{ csrf_field() }}
+    <label for="texte">Votre commentaire</label>
+    <textarea id="texte" name="texte"></textarea>
+    <button>Publier</button>
+  </form>
+  {% else %}
+  <p><a href="/connexion?next=/articles/{{ article.id }}">Connectez-vous</a> pour commenter.</p>
+  {% endif %}
+</section>
+{% endblock %}

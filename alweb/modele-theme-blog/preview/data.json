@@ -1,0 +1,303 @@
+{
+  "commun": {},
+  "index": {
+    "articles": [
+      {
+        "titre": "Une semaine dans les Alpes",
+        "url": "/blog/detail",
+        "resume": "Itinéraire, refuges et conseils pour une première randonnée en altitude.",
+        "image": "/theme/images/exemples/montagne.svg",
+        "categorie": "Voyages",
+        "date": "8 novembre 2026",
+        "auteur": "Awa Koné",
+        "lecture": 8
+      },
+      {
+        "titre": "Le café filtre, sans se tromper",
+        "url": "/blog/detail",
+        "resume": "Mouture, température, temps d'infusion : la méthode pas à pas.",
+        "image": "/theme/images/exemples/cafe.svg",
+        "categorie": "Cuisine",
+        "date": "2 novembre 2026",
+        "auteur": "Awa Koné",
+        "lecture": 5
+      },
+      {
+        "titre": "Apprendre à coder à 40 ans",
+        "url": "/blog/detail",
+        "resume": "Ce qui a marché, ce qui m'a fait perdre du temps, et les ressources à garder.",
+        "image": "/theme/images/exemples/code.svg",
+        "categorie": "Carrière",
+        "date": "27 octobre 2026",
+        "auteur": "Awa Koné",
+        "lecture": 7
+      },
+      {
+        "titre": "Dix livres pour l'hiver",
+        "url": "/blog/detail",
+        "resume": "Romans, essais et une bande dessinée : notre sélection de saison.",
+        "image": "/theme/images/exemples/livres.svg",
+        "categorie": "Lectures",
+        "date": "19 octobre 2026",
+        "auteur": "Awa Koné",
+        "lecture": 4
+      },
+      {
+        "titre": "Aller au travail à vélo",
+        "url": "/blog/detail",
+        "resume": "Équipement, itinéraire et sécurité : six mois de trajets quotidiens.",
+        "image": "/theme/images/exemples/velo.svg",
+        "categorie": "Vie pratique",
+        "date": "11 octobre 2026",
+        "auteur": "Awa Koné",
+        "lecture": 6
+      },
+      {
+        "titre": "Un potager sur un balcon",
+        "url": "/blog/detail",
+        "resume": "Bacs, semis et arrosage : récolter des tomates en ville.",
+        "image": "/theme/images/exemples/jardin.svg",
+        "categorie": "Maison",
+        "date": "3 octobre 2026",
+        "auteur": "Awa Koné",
+        "lecture": 5
+      }
+    ],
+    "categories": [
+      {
+        "nom": "Carrière",
+        "url": "/blog",
+        "actif": false,
+        "nombre": 1
+      },
+      {
+        "nom": "Cuisine",
+        "url": "/blog",
+        "actif": false,
+        "nombre": 1
+      },
+      {
+        "nom": "Lectures",
+        "url": "/blog",
+        "actif": false,
+        "nombre": 1
+      },
+      {
+        "nom": "Maison",
+        "url": "/blog",
+        "actif": false,
+        "nombre": 1
+      },
+      {
+        "nom": "Vie pratique",
+        "url": "/blog",
+        "actif": false,
+        "nombre": 1
+      },
+      {
+        "nom": "Voyages",
+        "url": "/blog",
+        "actif": false,
+        "nombre": 1
+      }
+    ]
+  },
+  "blog/index": {
+    "articles": [
+      {
+        "titre": "Une semaine dans les Alpes",
+        "url": "/blog/detail",
+        "resume": "Itinéraire, refuges et conseils pour une première randonnée en altitude.",
+        "image": "/theme/images/exemples/montagne.svg",
+        "categorie": "Voyages",
+        "date": "8 novembre 2026",
+        "auteur": "Awa Koné",
+        "lecture": 8
+      },
+      {
+        "titre": "Le café filtre, sans se tromper",
+        "url": "/blog/detail",
+        "resume": "Mouture, température, temps d'infusion : la méthode pas à pas.",
+        "image": "/theme/images/exemples/cafe.svg",
+        "categorie": "Cuisine",
+        "date": "2 novembre 2026",
+        "auteur": "Awa Koné",
+        "lecture": 5
+      },
+      {
+        "titre": "Apprendre à coder à 40 ans",
+        "url": "/blog/detail",
+        "resume": "Ce qui a marché, ce qui m'a fait perdre du temps, et les ressources à garder.",
+        "image": "/theme/images/exemples/code.svg",
+        "categorie": "Carrière",
+        "date": "27 octobre 2026",
+        "auteur": "Awa Koné",
+        "lecture": 7
+      },
+      {
+        "titre": "Dix livres pour l'hiver",
+        "url": "/blog/detail",
+        "resume": "Romans, essais et une bande dessinée : notre sélection de saison.",
+        "image": "/theme/images/exemples/livres.svg",
+        "categorie": "Lectures",
+        "date": "19 octobre 2026",
+        "auteur": "Awa Koné",
+        "lecture": 4
+      },
+      {
+        "titre": "Aller au travail à vélo",
+        "url": "/blog/detail",
+        "resume": "Équipement, itinéraire et sécurité : six mois de trajets quotidiens.",
+        "image": "/theme/images/exemples/velo.svg",
+        "categorie": "Vie pratique",
+        "date": "11 octobre 2026",
+        "auteur": "Awa Koné",
+        "lecture": 6
+      },
+      {
+        "titre": "Un potager sur un balcon",
+        "url": "/blog/detail",
+        "resume": "Bacs, semis et arrosage : récolter des tomates en ville.",
+        "image": "/theme/images/exemples/jardin.svg",
+        "categorie": "Maison",
+        "date": "3 octobre 2026",
+        "auteur": "Awa Koné",
+        "lecture": 5
+      }
+    ],
+    "categories": [
+      {
+        "nom": "Carrière",
+        "url": "/blog",
+        "actif": false,
+        "nombre": 1
+      },
+      {
+        "nom": "Cuisine",
+        "url": "/blog",
+        "actif": false,
+        "nombre": 1
+      },
+      {
+        "nom": "Lectures",
+        "url": "/blog",
+        "actif": false,
+        "nombre": 1
+      },
+      {
+        "nom": "Maison",
+        "url": "/blog",
+        "actif": false,
+        "nombre": 1
+      },
+      {
+        "nom": "Vie pratique",
+        "url": "/blog",
+        "actif": false,
+        "nombre": 1
+      },
+      {
+        "nom": "Voyages",
+        "url": "/blog",
+        "actif": false,
+        "nombre": 1
+      }
+    ],
+    "recents": [
+      {
+        "titre": "Une semaine dans les Alpes",
+        "url": "/blog/detail",
+        "resume": "Itinéraire, refuges et conseils pour une première randonnée en altitude.",
+        "image": "/theme/images/exemples/montagne.svg",
+        "categorie": "Voyages",
+        "date": "8 novembre 2026",
+        "auteur": "Awa Koné",
+        "lecture": 8
+      },
+      {
+        "titre": "Le café filtre, sans se tromper",
+        "url": "/blog/detail",
+        "resume": "Mouture, température, temps d'infusion : la méthode pas à pas.",
+        "image": "/theme/images/exemples/cafe.svg",
+        "categorie": "Cuisine",
+        "date": "2 novembre 2026",
+        "auteur": "Awa Koné",
+        "lecture": 5
+      },
+      {
+        "titre": "Apprendre à coder à 40 ans",
+        "url": "/blog/detail",
+        "resume": "Ce qui a marché, ce qui m'a fait perdre du temps, et les ressources à garder.",
+        "image": "/theme/images/exemples/code.svg",
+        "categorie": "Carrière",
+        "date": "27 octobre 2026",
+        "auteur": "Awa Koné",
+        "lecture": 7
+      },
+      {
+        "titre": "Dix livres pour l'hiver",
+        "url": "/blog/detail",
+        "resume": "Romans, essais et une bande dessinée : notre sélection de saison.",
+        "image": "/theme/images/exemples/livres.svg",
+        "categorie": "Lectures",
+        "date": "19 octobre 2026",
+        "auteur": "Awa Koné",
+        "lecture": 4
+      }
+    ],
+    "pagination": {
+      "page": 1,
+      "pages": 2,
+      "precedente": null,
+      "suivante": "/blog?page=2"
+    }
+  },
+  "blog/detail": {
+    "article": {
+      "titre": "Une semaine dans les Alpes",
+      "url": "/blog/detail",
+      "resume": "Itinéraire, refuges et conseils pour une première randonnée en altitude.",
+      "image": "/theme/images/exemples/montagne.svg",
+      "categorie": "Voyages",
+      "date": "8 novembre 2026",
+      "auteur": "Awa Koné",
+      "lecture": 8,
+      "contenu": "Partir en altitude se prépare : un sac léger, des chaussures déjà faites à vos pieds et une météo vérifiée la veille.\n\nNous avons suivi un itinéraire de refuge en refuge, avec des étapes de cinq à six heures de marche.\n\nLe troisième jour, le col a demandé une heure de plus que prévu : partir tôt reste la meilleure assurance."
+    },
+    "similaires": [
+      {
+        "titre": "Le café filtre, sans se tromper",
+        "url": "/blog/detail",
+        "resume": "Mouture, température, temps d'infusion : la méthode pas à pas.",
+        "image": "/theme/images/exemples/cafe.svg",
+        "categorie": "Cuisine",
+        "date": "2 novembre 2026",
+        "auteur": "Awa Koné",
+        "lecture": 5
+      },
+      {
+        "titre": "Apprendre à coder à 40 ans",
+        "url": "/blog/detail",
+        "resume": "Ce qui a marché, ce qui m'a fait perdre du temps, et les ressources à garder.",
+        "image": "/theme/images/exemples/code.svg",
+        "categorie": "Carrière",
+        "date": "27 octobre 2026",
+        "auteur": "Awa Koné",
+        "lecture": 7
+      },
+      {
+        "titre": "Dix livres pour l'hiver",
+        "url": "/blog/detail",
+        "resume": "Romans, essais et une bande dessinée : notre sélection de saison.",
+        "image": "/theme/images/exemples/livres.svg",
+        "categorie": "Lectures",
+        "date": "19 octobre 2026",
+        "auteur": "Awa Koné",
+        "lecture": 4
+      }
+    ]
+  },
+  "about": {
+    "presentation": "Un blog écrit à plusieurs mains, depuis 2019."
+  }
+}

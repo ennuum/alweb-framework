@@ -1,0 +1,45 @@
+{# Composants du blog. Un article de liste : {titre, url, resume, image, categorie, date, auteur, lecture}.
+   (Une macro importée ne peut pas en appeler une autre du même fichier : chacune est complète.) #}
+{% macro une(a) %}
+<article class="une">
+  <a class="une-image" href="{{ a.url }}">{% if a.image %}<img src="{{ a.image }}" alt="">{% endif %}</a>
+  <div class="une-corps">
+    {% if a.categorie %}<p class="categorie">{{ a.categorie }}</p>{% endif %}
+    <h2><a href="{{ a.url }}">{{ a.titre }}</a></h2>
+    <p class="chapeau">{{ a.resume }}</p>
+    <p class="meta">{% if a.auteur %}{{ a.auteur }} · {% endif %}{{ a.date }}{% if a.lecture %} · {{ _("{n} min de lecture", {"n": a.lecture}) }}{% endif %}</p>
+  </div>
+</article>
+{% endmacro %}
+
+{% macro grille(articles) %}
+<div class="grille-articles">
+{% for a in articles %}
+<article class="vignette">
+  <a class="vignette-image" href="{{ a.url }}">{% if a.image %}<img src="{{ a.image }}" alt="" loading="lazy">{% endif %}</a>
+  {% if a.categorie %}<p class="categorie">{{ a.categorie }}</p>{% endif %}
+  <h3><a href="{{ a.url }}">{{ a.titre }}</a></h3>
+  <p>{{ a.resume }}</p>
+  <p class="meta">{{ a.date }}{% if a.lecture %} · {{ _("{n} min", {"n": a.lecture}) }}{% endif %}</p>
+</article>
+{% endfor %}
+</div>
+{% endmacro %}
+
+{% macro liste(articles) %}
+<div class="liste-articles">
+{% for a in articles %}
+<article class="ligne-article">
+  {% if a.image %}<a class="ligne-image" href="{{ a.url }}"><img src="{{ a.image }}" alt="" loading="lazy"></a>{% endif %}
+  <div>
+    {% if a.categorie %}<p class="categorie">{{ a.categorie }}</p>{% endif %}
+    <h2><a href="{{ a.url }}">{{ a.titre }}</a></h2>
+    <p>{{ a.resume }}</p>
+    <p class="meta">{% if a.auteur %}{{ a.auteur }} · {% endif %}{{ a.date }}{% if a.lecture %} · {{ _("{n} min de lecture", {"n": a.lecture}) }}{% endif %}</p>
+  </div>
+</article>
+{% else %}
+<p class="vide">{{ _("Aucun article pour le moment.") }}</p>
+{% endfor %}
+</div>
+{% endmacro %}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Messagerie alweb</title>
+<link rel="stylesheet" href="/static/style.css">
+<script src="/static/chat.js" defer></script>
+</head>
+<body>
+<section id="accueil" class="carte">
+  <h1>Messagerie</h1>
+  <p class="mut">Exemple alweb : WebSocket, présence, historique. <a href="/docs">API</a></p>
+  <form id="identification">
+    <label>Pseudo <input name="pseudo" autocomplete="username" required pattern="[a-z0-9_]{3,24}" placeholder="ana"></label>
+    <label>Mot de passe <input name="mot_de_passe" type="password" autocomplete="current-password" required minlength="8"></label>
+    <div class="actions">
+      <button type="submit" name="action" value="connexion">Se connecter</button>
+      <button type="submit" name="action" value="inscription" class="second">Créer le compte</button>
+    </div>
+    <p id="erreur" class="erreur" role="alert"></p>
+  </form>
+</section>
+
+<main id="appli" hidden>
+  <aside>
+    <div class="moi"><span id="moi"></span> <button id="sortir" class="lien">sortir</button></div>
+    <h2>Salons</h2>
+    <ul id="salons"></ul>
+    <form id="nouveau-salon"><input name="nom" placeholder="nouveau-salon" pattern="[a-z0-9\-]{2,32}" required><button>+</button></form>
+  </aside>
+  <section class="fil">
+    <header><h2 id="titre"></h2><span id="etat" class="mut"></span></header>
+    <button id="plus" class="lien" hidden>messages plus anciens</button>
+    <ol id="messages"></ol>
+    <p id="ecrit" class="mut"></p>
+    <form id="envoi"><input name="texte" maxlength="2000" autocomplete="off" placeholder="Votre message" required><button>Envoyer</button></form>
+  </section>
+  <aside class="presents">
+    <h2>Présents</h2>
+    <ul id="presents"></ul>
+  </aside>
+</main>
+</body>
+</html>

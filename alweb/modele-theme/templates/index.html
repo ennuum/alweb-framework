@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% import "components/hero.html" as hero %}
+{% import "components/cards.html" as cards %}
+{% block contenu %}
+{{ hero.hero(theme.site.nom, theme.site.slogan, _("Découvrir nos services"), "/services") }}
+
+{% if services %}
+<section class="section">
+  <div class="conteneur">
+    <h2 class="titre-section">{{ _("Nos services") }}</h2>
+    <div class="grille">
+    {% for s in services %}{{ cards.carte(s.titre, s.texte, s.lien, loop.index) }}{% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if articles %}
+<section class="section doux">
+  <div class="conteneur">
+    <h2 class="titre-section">{{ _("Derniers articles") }}</h2>
+    <div class="grille">
+    {% for a in articles[0:3] %}{{ cards.article(a) }}{% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="section appel">
+  <div class="conteneur appel-contenu">
+    <h2>{{ _("Parlons de votre projet") }}</h2>
+    <a class="bouton clair" href="/contact">{{ _("Nous contacter") }}</a>
+  </div>
+</section>
+{% endblock %}

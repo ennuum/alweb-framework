@@ -1,0 +1,23 @@
+{
+  "nom": "Blog",
+  "database": {
+    "url": "sqlite:blog.db",
+    "migrate": true
+  },
+  "secret_key": "",
+  "journal": "",
+  "server": {
+    "host": "127.0.0.1",
+    "port": 8000
+  },
+  "api": {
+    "limite": 120
+  },
+  "par_page": 5,
+  "auth": {
+    "iterations": 600000
+  },
+  "mail": {
+    "from": "Blog <noreply@blog.example.org>"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "nom": "notes",
+  "stockage": "sql",
+  "database": {
+    "url": "sqlite:notes.db"
+  },
+  "server": {
+    "host": "127.0.0.1",
+    "port": 8000
+  },
+  "journal": true,
+  "journal_format": "text"
+}

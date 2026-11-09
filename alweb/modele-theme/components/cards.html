@@ -1,0 +1,16 @@
+{% macro carte(titre, texte, lien=null, numero=null) %}
+<article class="carte">
+  {% if numero %}<span class="pastille" aria-hidden="true">{{ numero }}</span>{% endif %}
+  <h3>{{ titre }}</h3>
+  <p>{{ texte }}</p>
+  {% if lien %}<a class="lien" href="{{ lien }}">{{ _("En savoir plus") }} →</a>{% endif %}
+</article>
+{% endmacro %}
+
+{% macro article(a) %}
+<article class="carte article">
+  {% if a.date %}<p class="meta">{{ a.date }}</p>{% endif %}
+  <h3><a href="{{ a.url }}">{{ a.titre }}</a></h3>
+  <p>{{ a.resume }}</p>
+</article>
+{% endmacro %}

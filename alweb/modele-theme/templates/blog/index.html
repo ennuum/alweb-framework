@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% import "components/cards.html" as cards %}
+{% block titre %}{{ _("Blog") }} — {{ super() }}{% endblock %}
+{% block contenu %}
+<section class="section">
+  <div class="conteneur{% if theme.mise_en_page.barre_laterale %} avec-barre{% endif %}">
+    <div>
+      <h1>{{ _("Blog") }}</h1>
+      {% for a in articles %}{{ cards.article(a) }}{% else %}<p class="vide">{{ _("Aucun article pour le moment.") }}</p>{% endfor %}
+      {% if pagination and pagination.pages > 1 %}
+      <nav class="pagination">
+        {% if pagination.precedente %}<a href="{{ pagination.precedente }}">← {{ _("Précédents") }}</a>{% endif %}
+        <span>{{ pagination.page }} / {{ pagination.pages }}</span>
+        {% if pagination.suivante %}<a href="{{ pagination.suivante }}">{{ _("Suivants") }} →</a>{% endif %}
+      </nav>
+      {% endif %}
+    </div>
+    {% if theme.mise_en_page.barre_laterale %}{% include "components/sidebar.html" %}{% endif %}
+  </div>
+</section>
+{% endblock %}

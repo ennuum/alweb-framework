@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="{{ lang | default('fr') }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block titre %}{{ theme.site.nom }}{% endblock %}</title>
+<meta name="description" content="{% block description %}{{ theme.site.slogan }}{% endblock %}">
+<link rel="icon" href="{{ asset('icons/favicon.svg') }}" type="image/svg+xml">
+<link rel="stylesheet" href="{{ theme_css }}">
+<link rel="stylesheet" href="{{ asset('css/theme.css') }}">
+<script src="{{ asset('js/theme.js') }}" defer></script>
+</head>
+<body>
+{% include "components/navbar.html" %}
+{% if flashes %}<div class="conteneur">{% for f in flashes() %}<p class="flash {{ f.category }}">{{ f.message }}</p>{% endfor %}</div>{% endif %}
+<main>
+{% block contenu %}{% endblock %}
+</main>
+{% include "components/footer.html" %}
+</body>
+</html>

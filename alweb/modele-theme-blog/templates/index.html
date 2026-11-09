@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% import "components/articles.html" as art %}
+{% block contenu %}
+<section class="intro-blog">
+  <div class="conteneur">
+    <h1>{{ theme.site.nom }}</h1>
+    <p class="chapeau">{{ theme.site.slogan }}</p>
+    {% if categories %}<nav class="categories-ligne" aria-label="{{ _('Catégories') }}">{% for c in categories %}<a href="{{ c.url }}">{{ c.nom }}</a>{% endfor %}</nav>{% endif %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="conteneur">
+    {% if articles %}
+    {{ art.une(articles[0]) }}
+    {% if articles[1:] %}
+    <h2 class="titre-section">{{ _("Derniers articles") }}</h2>
+    {{ art.grille(articles[1:7]) }}
+    {% endif %}
+    <p class="tout-voir"><a class="bouton" href="/blog">{{ _("Tous les articles") }}</a></p>
+    {% else %}
+    <p class="vide">{{ _("Aucun article pour le moment.") }}</p>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

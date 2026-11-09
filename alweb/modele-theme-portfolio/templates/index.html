@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% import "components/projets.html" as pj %}
+{% block contenu %}
+<section class="presentation">
+  <div class="conteneur">
+    {% if theme.portfolio.disponible %}<p class="disponible"><span aria-hidden="true"></span>{{ _("Disponible pour de nouveaux projets") }}</p>{% endif %}
+    <h1>{{ theme.site.nom }}</h1>
+    <p class="presentation-texte">{{ theme.site.slogan }}</p>
+    <p class="presentation-actions"><a class="bouton" href="/projets">{{ _("Voir les projets") }}</a> <a class="lien-courriel" href="mailto:{{ theme.portfolio.courriel }}">{{ theme.portfolio.courriel }}</a></p>
+  </div>
+</section>
+<section class="section">
+  <div class="conteneur">
+    <h2 class="titre-section">{{ _("Projets choisis") }}</h2>
+    {% if projets %}{{ pj.grille(projets) }}{% else %}<p class="vide">{{ _("Aucun projet pour le moment.") }}</p>{% endif %}
+  </div>
+</section>
+{% if competences %}
+<section class="section doux">
+  <div class="conteneur">
+    <h2 class="titre-section">{{ _("Ce que je fais") }}</h2>
+    <div class="competences">{% for c in competences %}<div><h3>{{ c.titre }}</h3><p>{{ c.texte }}</p></div>{% endfor %}</div>
+  </div>
+</section>
+{% endif %}
+<section class="section appel">
+  <div class="conteneur appel-contenu">
+    <h2>{{ _("Un projet en tête ?") }}</h2>
+    <a class="bouton clair" href="/contact">{{ _("Parlons-en") }}</a>
+  </div>
+</section>
+{% endblock %}

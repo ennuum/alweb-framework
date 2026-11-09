@@ -1,0 +1,9 @@
+{% macro hero(titre, texte, bouton=null, lien=null) %}
+<section class="hero">
+  <div class="conteneur hero-contenu">
+    <h1>{{ titre }}</h1>
+    <p>{{ texte }}</p>
+    {% if bouton and lien %}<a class="bouton" href="{{ lien }}">{{ bouton }}</a>{% endif %}
+  </div>
+</section>
+{% endmacro %}

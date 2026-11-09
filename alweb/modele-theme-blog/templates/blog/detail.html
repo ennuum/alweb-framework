@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% import "components/articles.html" as art %}
+{% block titre %}{{ article.titre }} — {{ super() }}{% endblock %}
+{% block description %}{{ article.resume | default(theme.site.slogan) }}{% endblock %}
+{% block contenu %}
+<article class="lecture">
+  <header class="conteneur etroit lecture-entete">
+    <p class="meta"><a href="{{ blog_url | default('/blog') }}">← {{ _("Articles") }}</a>{% if article.categorie %} · <a href="{{ article.categorie_url | default('/blog') }}">{{ article.categorie }}</a>{% endif %}</p>
+    <h1>{{ article.titre }}</h1>
+    {% if article.resume %}<p class="chapeau">{{ article.resume }}</p>{% endif %}
+    <p class="meta">{% if article.auteur %}{{ _("Par {a}", {"a": article.auteur}) }} · {% endif %}{{ article.date }}{% if article.lecture %} · {{ _("{n} min de lecture", {"n": article.lecture}) }}{% endif %}</p>
+  </header>
+  {% if article.image %}<div class="conteneur lecture-image"><img src="{{ article.image }}" alt=""></div>{% endif %}
+  <div class="conteneur etroit texte-article">{{ article.contenu | nl2br }}</div>
+</article>
+{% if similaires %}
+<section class="section doux">
+  <div class="conteneur">
+    <h2 class="titre-section">{{ _("À lire aussi") }}</h2>
+    {{ art.grille(similaires) }}
+  </div>
+</section>
+{% endif %}
+{% endblock %}

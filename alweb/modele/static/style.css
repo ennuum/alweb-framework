@@ -1,0 +1,15 @@
+:root { --fond: #f6f7f9; --texte: #1d2330; --accent: #3b5bdb; --carte: #fff; --doux: #6b7280; --erreur: #c92a2a; }
+* { box-sizing: border-box; }
+body { margin: 0; font: 16px/1.5 system-ui, sans-serif; background: var(--fond); color: var(--texte); }
+header, main, footer { max-width: 42rem; margin: 0 auto; padding: 1rem; }
+header h1 a { color: inherit; text-decoration: none; }
+footer { color: var(--doux); font-size: .85rem; }
+.carte { background: var(--carte); border-radius: .5rem; padding: 1rem; margin-bottom: 1rem; box-shadow: 0 1px 2px rgba(0, 0, 0, .06); }
+label { display: block; font-weight: 600; margin-top: .5rem; }
+input { width: 100%; padding: .5rem; border: 1px solid #ccd; border-radius: .35rem; font: inherit; }
+button { margin-top: .75rem; padding: .5rem 1rem; border: 0; border-radius: .35rem; background: var(--accent); color: #fff; font: inherit; cursor: pointer; }
+.meta { color: var(--doux); font-size: .9rem; margin: 0; }
+.erreur { color: var(--erreur); margin: .25rem 0 0; }
+.flash { max-width: 40rem; margin: 0 auto 1rem; padding: .5rem 1rem; border-radius: .35rem; background: #e7f5ff; }
+.flash.succes { background: #ebfbee; }
+.flash.erreur { background: #fff5f5; }

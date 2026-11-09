@@ -1,0 +1,23 @@
+{
+  "nom": "Messagerie alweb",
+  "database": {
+    "url": "sqlite:chat.db"
+  },
+  "secret_key": "",
+  "server": {
+    "host": "127.0.0.1",
+    "port": 8000
+  },
+  "auth": {
+    "iterations": 600000
+  },
+  "temps_reel": {
+    "partage": false
+  },
+  "limites": {
+    "global": 600,
+    "connexion": 10,
+    "inscription": 10,
+    "envoi": 20
+  }
+}

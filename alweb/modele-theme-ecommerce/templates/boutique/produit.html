@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% import "components/boutique.html" as b %}
+{% block titre %}{{ produit.nom }} — {{ super() }}{% endblock %}
+{% block description %}{{ produit.resume | default(theme.site.slogan) }}{% endblock %}
+{% block contenu %}
+<section class="section">
+  <div class="conteneur">
+    <p class="meta"><a href="{{ boutique_url | default('/boutique') }}">← {{ _("Boutique") }}</a>{% if produit.categorie %} · {{ produit.categorie }}{% endif %}</p>
+    <div class="fiche">
+      <div class="fiche-image">{% if produit.image %}<img src="{{ produit.image }}" alt="{{ produit.nom }}">{% endif %}</div>
+      <div class="fiche-infos">
+        <h1>{{ produit.nom }}</h1>
+        <p class="fiche-prix">{{ b.prix(produit.prix, produit.prix_barre) }}</p>
+        {% if produit.resume %}<p class="chapeau">{{ produit.resume }}</p>{% endif %}
+        {% if produit.stock and produit.stock > 0 %}
+        <form class="ajout" method="post" action="{{ ajout_action | default('/panier/ajouter') }}">
+          {% if csrf_field %}{{ csrf_field() }}{% endif %}
+          <input type="hidden" name="produit" value="{{ produit.id }}">
+          <label for="quantite">{{ _("Quantité") }}</label>
+          <input id="quantite" name="quantite" type="number" min="1" max="{{ produit.stock }}" value="1">
+          <button class="bouton" type="submit">{{ _("Ajouter au panier") }}</button>
+        </form>
+        <p class="meta">{{ _("En stock") }}{% if produit.stock < 5 %} : {{ _("plus que {n}", {"n": produit.stock}) }}{% endif %}</p>
+        {% else %}
+        <p class="rupture">{{ _("Épuisé pour le moment.") }}</p>
+        {% endif %}
+        {% if produit.description %}<div class="texte">{{ produit.description | nl2br }}</div>{% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+{% if similaires %}
+<section class="section doux">
+  <div class="conteneur">
+    <h2 class="titre-section">{{ _("Vous aimerez aussi") }}</h2>
+    {{ b.grille(similaires) }}
+  </div>
+</section>
+{% endif %}
+{% endblock %}

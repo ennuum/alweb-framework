@@ -1,0 +1,244 @@
+{
+  "commun": {
+    "panier_nombre": 3
+  },
+  "index": {
+    "produits": [
+      {
+        "nom": "Mug céramique",
+        "url": "/boutique/produit",
+        "image": "/theme/images/exemples/mug.svg",
+        "categorie": "Cuisine",
+        "prix": "18,00",
+        "prix_barre": null
+      },
+      {
+        "nom": "Sac en toile",
+        "url": "/boutique/produit",
+        "image": "/theme/images/exemples/sac.svg",
+        "categorie": "Accessoires",
+        "prix": "34,90",
+        "prix_barre": "42,00"
+      },
+      {
+        "nom": "Plante d'intérieur",
+        "url": "/boutique/produit",
+        "image": "/theme/images/exemples/plante.svg",
+        "categorie": "Maison",
+        "prix": "24,50",
+        "prix_barre": null
+      },
+      {
+        "nom": "Bougie parfumée",
+        "url": "/boutique/produit",
+        "image": "/theme/images/exemples/bougie.svg",
+        "categorie": "Maison",
+        "prix": "16,90",
+        "prix_barre": null
+      },
+      {
+        "nom": "Carnet ligné",
+        "url": "/boutique/produit",
+        "image": "/theme/images/exemples/carnet.svg",
+        "categorie": "Papeterie",
+        "prix": "12,00",
+        "prix_barre": null
+      },
+      {
+        "nom": "Casquette brodée",
+        "url": "/boutique/produit",
+        "image": "/theme/images/exemples/casquette.svg",
+        "categorie": "Accessoires",
+        "prix": "22,00",
+        "prix_barre": "27,50"
+      }
+    ],
+    "categories": [
+      {
+        "nom": "Accessoires",
+        "url": "/boutique",
+        "actif": false
+      },
+      {
+        "nom": "Cuisine",
+        "url": "/boutique",
+        "actif": false
+      },
+      {
+        "nom": "Maison",
+        "url": "/boutique",
+        "actif": false
+      },
+      {
+        "nom": "Papeterie",
+        "url": "/boutique",
+        "actif": false
+      }
+    ]
+  },
+  "boutique/index": {
+    "produits": [
+      {
+        "nom": "Mug céramique",
+        "url": "/boutique/produit",
+        "image": "/theme/images/exemples/mug.svg",
+        "categorie": "Cuisine",
+        "prix": "18,00",
+        "prix_barre": null
+      },
+      {
+        "nom": "Sac en toile",
+        "url": "/boutique/produit",
+        "image": "/theme/images/exemples/sac.svg",
+        "categorie": "Accessoires",
+        "prix": "34,90",
+        "prix_barre": "42,00"
+      },
+      {
+        "nom": "Plante d'intérieur",
+        "url": "/boutique/produit",
+        "image": "/theme/images/exemples/plante.svg",
+        "categorie": "Maison",
+        "prix": "24,50",
+        "prix_barre": null
+      },
+      {
+        "nom": "Bougie parfumée",
+        "url": "/boutique/produit",
+        "image": "/theme/images/exemples/bougie.svg",
+        "categorie": "Maison",
+        "prix": "16,90",
+        "prix_barre": null
+      },
+      {
+        "nom": "Carnet ligné",
+        "url": "/boutique/produit",
+        "image": "/theme/images/exemples/carnet.svg",
+        "categorie": "Papeterie",
+        "prix": "12,00",
+        "prix_barre": null
+      },
+      {
+        "nom": "Casquette brodée",
+        "url": "/boutique/produit",
+        "image": "/theme/images/exemples/casquette.svg",
+        "categorie": "Accessoires",
+        "prix": "22,00",
+        "prix_barre": "27,50"
+      }
+    ],
+    "categories": [
+      {
+        "nom": "Accessoires",
+        "url": "/boutique",
+        "actif": false
+      },
+      {
+        "nom": "Cuisine",
+        "url": "/boutique",
+        "actif": false
+      },
+      {
+        "nom": "Maison",
+        "url": "/boutique",
+        "actif": false
+      },
+      {
+        "nom": "Papeterie",
+        "url": "/boutique",
+        "actif": false
+      }
+    ]
+  },
+  "boutique/produit": {
+    "produit": {
+      "id": 2,
+      "nom": "Sac en toile",
+      "image": "/theme/images/exemples/sac.svg",
+      "categorie": "Accessoires",
+      "prix": "34,90",
+      "prix_barre": "42,00",
+      "resume": "Un grand sac en coton épais, pour le marché comme pour la plage.",
+      "stock": 3,
+      "description": "Coton biologique 340 g/m².\nAnses renforcées, poche intérieure.\nLavable en machine à 30 °C."
+    },
+    "similaires": [
+      {
+        "nom": "Bougie parfumée",
+        "url": "/boutique/produit",
+        "image": "/theme/images/exemples/bougie.svg",
+        "categorie": "Maison",
+        "prix": "16,90",
+        "prix_barre": null
+      },
+      {
+        "nom": "Carnet ligné",
+        "url": "/boutique/produit",
+        "image": "/theme/images/exemples/carnet.svg",
+        "categorie": "Papeterie",
+        "prix": "12,00",
+        "prix_barre": null
+      },
+      {
+        "nom": "Casquette brodée",
+        "url": "/boutique/produit",
+        "image": "/theme/images/exemples/casquette.svg",
+        "categorie": "Accessoires",
+        "prix": "22,00",
+        "prix_barre": "27,50"
+      }
+    ]
+  },
+  "panier": {
+    "lignes": [
+      {
+        "id": 1,
+        "nom": "Sac en toile",
+        "url": "/boutique/produit",
+        "image": "/theme/images/exemples/sac.svg",
+        "prix": "34,90",
+        "quantite": 1,
+        "total": "34,90"
+      },
+      {
+        "id": 4,
+        "nom": "Bougie parfumée",
+        "url": "/boutique/produit",
+        "image": "/theme/images/exemples/bougie.svg",
+        "prix": "16,90",
+        "quantite": 2,
+        "total": "33,80"
+      }
+    ],
+    "total": "68,70"
+  },
+  "commande": {
+    "lignes": [
+      {
+        "id": 1,
+        "nom": "Sac en toile",
+        "url": "/boutique/produit",
+        "image": "/theme/images/exemples/sac.svg",
+        "prix": "34,90",
+        "quantite": 1,
+        "total": "34,90"
+      },
+      {
+        "id": 4,
+        "nom": "Bougie parfumée",
+        "url": "/boutique/produit",
+        "image": "/theme/images/exemples/bougie.svg",
+        "prix": "16,90",
+        "quantite": 2,
+        "total": "33,80"
+      }
+    ],
+    "total": "68,70"
+  },
+  "services": {
+    "services": []
+  },
+  "about": {
+    "presentation": "Une petite boutique indépendante qui sélectionne des objets utiles et durables."
+  }
+}

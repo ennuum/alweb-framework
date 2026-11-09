@@ -1,0 +1,9 @@
+{
+  "debug": true,
+  "journal": "text",
+  "secret_key": "1b61b2bc865529d6081bd8fed5aea92aebf5d636e5a7752e",
+  "mail": {
+    "url": "console"
+  },
+  "site_url": "http://127.0.0.1:8000"
+}

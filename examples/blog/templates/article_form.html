@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% import "_champs.html" as champs %}
+{% block contenu %}
+<h2>{{ 'Modifier' if article else 'Nouvel article' }}</h2>
+<form method="post" enctype="multipart/form-data">
+  {{ csrf_field() }}
+  {{ champs.texte(form, "titre", "Titre") }}
+  <label for="texte">Texte</label>
+  <textarea id="texte" name="texte">{{ form.values.texte }}</textarea>
+  {% if form.error('texte') %}<p class="erreur">{{ form.error('texte') }}</p>{% endif %}
+  <label for="photo">Photo (JPEG, PNG, WebP, GIF ; 15 Mo au plus){% if article and article.photo %} — remplace l'actuelle{% endif %}</label>
+  <input type="file" id="photo" name="photo" accept="image/jpeg,image/png,image/webp,image/gif">
+  {% if form.error('photo') %}<p class="erreur">{{ form.error('photo') }}</p>{% endif %}
+  <label for="piece">Pièce jointe PDF, réservée aux lecteurs connectés (5 Mo au plus){% if article and article.piece %} — remplace {{ article.piece.nom }}{% endif %}</label>
+  <input type="file" id="piece" name="piece" accept="application/pdf">
+  {% if form.error('piece') %}<p class="erreur">{{ form.error('piece') }}</p>{% endif %}
+  <button>Enregistrer</button>
+</form>
+{% endblock %}

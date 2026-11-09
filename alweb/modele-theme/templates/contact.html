@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block titre %}{{ _("Contact") }} — {{ super() }}{% endblock %}
+{% block contenu %}
+<section class="section">
+  <div class="conteneur etroit">
+    <h1>{{ _("Contact") }}</h1>
+    {% if envoye %}
+    <p class="flash succes">{{ _("Merci, votre message a bien été envoyé.") }}</p>
+    {% else %}
+    <form class="formulaire" method="post" action="{{ contact_action | default('/contact') }}">
+      {% if csrf_field %}{{ csrf_field() }}{% endif %}
+      {% for champ in [["nom", _("Nom"), "text"], ["courriel", _("Adresse e-mail"), "email"]] %}
+      <label for="{{ champ[0] }}">{{ champ[1] }}</label>
+      <input id="{{ champ[0] }}" name="{{ champ[0] }}" type="{{ champ[2] }}" required value="{{ form.values[champ[0]] if form else '' }}">
+      {% if form and form.error(champ[0]) %}<p class="erreur">{{ form.error(champ[0]) }}</p>{% endif %}
+      {% endfor %}
+      <label for="message">{{ _("Message") }}</label>
+      <textarea id="message" name="message" rows="6" required>{{ form.values.message if form else '' }}</textarea>
+      {% if form and form.error("message") %}<p class="erreur">{{ form.error("message") }}</p>{% endif %}
+      <button class="bouton" type="submit">{{ _("Envoyer") }}</button>
+    </form>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

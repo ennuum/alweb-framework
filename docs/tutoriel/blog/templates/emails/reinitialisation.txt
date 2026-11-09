@@ -1,0 +1,9 @@
+Bonjour {{ nom }},
+
+Quelqu'un (vous, sans doute) a demandé à changer le mot de passe de votre compte sur {{ app_name }}.
+Pour en choisir un nouveau, ouvrez ce lien :
+
+{{ lien }}
+
+Il est valable une heure et ne sert qu'une fois. Si vous n'avez rien demandé, ignorez ce message :
+votre mot de passe actuel reste valable.

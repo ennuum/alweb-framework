@@ -1,0 +1,9 @@
+<header class="entete">
+  <div class="conteneur entete-contenu">
+    <a class="marque" href="/"><img src="{{ asset(theme.logo) }}" alt="" width="34" height="34"><span>{{ theme.site.nom }}</span></a>
+    <button class="menu-bouton" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="{{ _('Menu') }}"><span class="menu-icone" aria-hidden="true"><span></span><span></span><span></span></span></button>
+    <nav id="menu-principal" class="menu">
+      {% for l in theme.menu %}<a href="{{ l.url }}"{% if request and request.path() == l.url %} aria-current="page"{% endif %}>{{ l.label }}</a>{% endfor %}
+    </nav>
+  </div>
+</header>

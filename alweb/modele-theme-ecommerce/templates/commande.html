@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% import "components/boutique.html" as b %}
+{% block titre %}{{ _("Commande") }} — {{ super() }}{% endblock %}
+{% block contenu %}
+<section class="section">
+  <div class="conteneur">
+    {% if confirmee %}
+    <div class="etroit confirmation">
+      <h1>{{ _("Merci pour votre commande !") }}</h1>
+      <p class="chapeau">{{ _("Commande n° {n} enregistrée. Nous vous contactons pour la livraison.", {"n": numero}) }}</p>
+      <a class="bouton" href="{{ boutique_url | default('/boutique') }}">{{ _("Retour à la boutique") }}</a>
+    </div>
+    {% else %}
+    <h1>{{ _("Commande") }}</h1>
+    <div class="commande">
+      <form class="formulaire" method="post" action="{{ commande_action | default('/commande') }}">
+        {% if csrf_field %}{{ csrf_field() }}{% endif %}
+        {% for champ in [["nom", _("Nom complet"), "text"], ["courriel", _("Adresse e-mail"), "email"], ["telephone", _("Téléphone"), "tel"]] %}
+        <label for="{{ champ[0] }}">{{ champ[1] }}</label>
+        <input id="{{ champ[0] }}" name="{{ champ[0] }}" type="{{ champ[2] }}"{% if champ[0] != "telephone" %} required{% endif %} value="{{ form.values[champ[0]] if form and champ[0] in form.values else '' }}">
+        {% if form and form.error(champ[0]) %}<p class="erreur">{{ form.error(champ[0]) }}</p>{% endif %}
+        {% endfor %}
+        <label for="adresse">{{ _("Adresse de livraison") }}</label>
+        <textarea id="adresse" name="adresse" rows="3" required>{{ form.values.adresse if form else '' }}</textarea>
+        {% if form and form.error("adresse") %}<p class="erreur">{{ form.error("adresse") }}</p>{% endif %}
+        <button class="bouton" type="submit">{{ _("Valider la commande") }}</button>
+      </form>
+      <aside class="recap">
+        <h2>{{ _("Récapitulatif") }}</h2>
+        <ul>{% for l in lignes %}<li><span>{{ l.quantite }} × {{ l.nom }}</span><span>{{ b.prix(l.total) }}</span></li>{% endfor %}</ul>
+        <p class="panier-total">{{ _("Total") }} : {{ b.prix(total) }}</p>
+        <p class="meta">{{ _("Paiement à la livraison.") }}</p>
+      </aside>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

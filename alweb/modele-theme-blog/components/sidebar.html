@@ -1,0 +1,19 @@
+<aside class="barre">
+  <section>
+    <h2>{{ theme.blog.auteur }}</h2>
+    <p>{{ theme.blog.presentation }}</p>
+  </section>
+  {% if categories %}
+  <section>
+    <h2>{{ _("Catégories") }}</h2>
+    <ul class="categories">{% for c in categories %}<li><a href="{{ c.url }}"{% if c.actif %} aria-current="page"{% endif %}>{{ c.nom }}</a>{% if c.nombre %} <span class="meta">({{ c.nombre }})</span>{% endif %}</li>{% endfor %}</ul>
+  </section>
+  {% endif %}
+  {% if recents %}
+  <section>
+    <h2>{{ _("Articles récents") }}</h2>
+    <ul class="recents">{% for a in recents %}<li><a href="{{ a.url }}">{{ a.titre }}</a></li>{% endfor %}</ul>
+  </section>
+  {% endif %}
+  <a class="bouton" href="/contact">{{ _("Écrire à la rédaction") }}</a>
+</aside>

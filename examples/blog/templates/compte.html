@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% import "_champs.html" as champs %}
+{% block contenu %}
+<h2>{{ titre }}</h2>
+<form method="post">
+  {{ csrf_field() }}
+  <input type="hidden" name="next" value="{{ next }}">
+  {{ champs.texte(form, "nom", "Nom d'utilisateur") }}
+  {{ champs.texte(form, "mdp", "Mot de passe", "password") }}
+  {% if form.error('') %}<p class="erreur">{{ form.error('') }}</p>{% endif %}
+  <button>{{ bouton }}</button>
+</form>
+{% endblock %}

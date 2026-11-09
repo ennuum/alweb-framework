@@ -1,0 +1,119 @@
+{
+  "commun": {},
+  "index": {
+    "services": [
+      {
+        "titre": "Conseil",
+        "texte": "Un regard extérieur sur votre organisation et vos outils.",
+        "lien": "/services"
+      },
+      {
+        "titre": "Développement",
+        "texte": "Des applications web sur mesure, rapides et sûres.",
+        "lien": "/services"
+      },
+      {
+        "titre": "Formation",
+        "texte": "Vos équipes autonomes sur les outils qu'elles utilisent.",
+        "lien": "/services"
+      }
+    ],
+    "articles": [
+      {
+        "titre": "Trois conseils pour un site rapide",
+        "resume": "Images, cache et polices : l'essentiel en dix minutes.",
+        "url": "/blog/detail",
+        "date": "8 novembre 2026"
+      },
+      {
+        "titre": "Pourquoi un thème ?",
+        "resume": "Séparer l'interface du code métier change la vie d'une équipe.",
+        "url": "/blog/detail",
+        "date": "2 novembre 2026"
+      },
+      {
+        "titre": "Nos nouveaux locaux",
+        "resume": "Nous vous accueillons désormais au centre-ville.",
+        "url": "/blog/detail",
+        "date": "28 octobre 2026"
+      }
+    ]
+  },
+  "services": {
+    "services": [
+      {
+        "titre": "Conseil",
+        "texte": "Audit, feuille de route, choix techniques.",
+        "lien": "/contact"
+      },
+      {
+        "titre": "Développement",
+        "texte": "Applications web, API, intégrations.",
+        "lien": "/contact"
+      },
+      {
+        "titre": "Hébergement",
+        "texte": "Mise en production, sauvegardes, supervision.",
+        "lien": "/contact"
+      },
+      {
+        "titre": "Formation",
+        "texte": "Sessions pratiques sur mesure.",
+        "lien": "/contact"
+      }
+    ]
+  },
+  "about": {
+    "presentation": "Depuis 2015, nous aidons les entreprises à concevoir et faire vivre leurs outils numériques.",
+    "equipe": [
+      {
+        "nom": "Awa Koné",
+        "role": "Direction"
+      },
+      {
+        "nom": "Bruno Diallo",
+        "role": "Développement"
+      },
+      {
+        "nom": "Chloé Martin",
+        "role": "Design"
+      }
+    ]
+  },
+  "blog/index": {
+    "articles": [
+      {
+        "titre": "Trois conseils pour un site rapide",
+        "resume": "Images, cache et polices : l'essentiel en dix minutes.",
+        "url": "/blog/detail",
+        "date": "8 novembre 2026"
+      },
+      {
+        "titre": "Pourquoi un thème ?",
+        "resume": "Séparer l'interface du code métier change la vie d'une équipe.",
+        "url": "/blog/detail",
+        "date": "2 novembre 2026"
+      }
+    ],
+    "recents": [
+      {
+        "titre": "Trois conseils pour un site rapide",
+        "url": "/blog/detail"
+      }
+    ],
+    "pagination": {
+      "page": 1,
+      "pages": 3,
+      "precedente": null,
+      "suivante": "/blog?page=2"
+    }
+  },
+  "blog/detail": {
+    "article": {
+      "titre": "Trois conseils pour un site rapide",
+      "auteur": "Awa Koné",
+      "date": "8 novembre 2026",
+      "contenu": "Un site rapide commence par des images à la bonne taille.\\nEnsuite, un cache bien réglé évite de tout recharger.\\nEnfin, deux polices suffisent."
+    }
+  }
+}

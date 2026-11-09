@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block titre %}{{ article.titre }} — {{ super() }}{% endblock %}
+{% block contenu %}
+<article class="section">
+  <div class="conteneur etroit">
+    <p class="meta"><a href="/blog">← {{ _("Blog") }}</a>{% if article.date %} · {{ article.date }}{% endif %}{% if article.auteur %} · {{ article.auteur }}{% endif %}</p>
+    <h1>{{ article.titre }}</h1>
+    {% if article.image %}<img class="illustration" src="{{ article.image }}" alt="">{% endif %}
+    <div class="texte">{{ article.contenu | nl2br }}</div>
+  </div>
+</article>
+{% endblock %}

@@ -1,0 +1,6 @@
+<footer class="pied">
+  <div class="conteneur pied-contenu">
+    <p><strong>{{ theme.site.nom }}</strong> — {{ theme.pied.texte }}</p>
+    {% if theme.reseaux %}<nav class="reseaux">{% for l in theme.reseaux %}<a href="{{ l.url }}" rel="noopener">{{ l.label }}</a>{% endfor %}</nav>{% endif %}
+  </div>
+</footer>

@@ -1,0 +1,11 @@
+{# Grille de projets. Un projet de liste : {titre, url, image, categorie, annee, resume}. #}
+{% macro grille(projets) %}
+<div class="grille-projets">
+{% for p in projets %}
+<a class="projet" href="{{ p.url }}">
+  <span class="projet-image">{% if p.image %}<img src="{{ p.image }}" alt="" loading="lazy">{% endif %}</span>
+  <span class="projet-legende"><strong>{{ p.titre }}</strong><span class="meta">{{ p.categorie }}{% if p.annee %} · {{ p.annee }}{% endif %}</span></span>
+</a>
+{% endfor %}
+</div>
+{% endmacro %}

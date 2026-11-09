@@ -1,0 +1,13 @@
+.git
+build
+dist
+*.albc
+*.al.meta
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+media
+config/local.json
+.env
+deploy/*.service

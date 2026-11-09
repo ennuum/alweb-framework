@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% macro champ(form, nom, libelle) %}
+<label for="{{ nom }}">{{ libelle }}</label>
+<input id="{{ nom }}" name="{{ nom }}" value="{{ form.values[nom] if form and nom in form.values else '' }}">
+{% if form and form.error(nom) %}<p class="erreur">{{ form.error(nom) }}</p>{% endif %}
+{% endmacro %}
+{% block contenu %}
+{# Avec un thème actif (alweb theme install) : bandeau et mise en page du thème ; sans thème : page simple. #}
+{% if theme %}
+<section class="hero">
+  <div class="conteneur hero-contenu">
+    <h1>{{ theme.site.nom }}</h1>
+    <p>{{ theme.site.slogan }}</p>
+    <a class="bouton" href="#messages">Laisser un message</a>
+  </div>
+</section>
+{% endif %}
+<section class="section" id="messages">
+<div class="conteneur etroit">
+{% if theme %}<h2 class="titre-section">Messages</h2>{% endif %}
+<form method="post" action="{{ url_for('publier') }}" class="carte formulaire">
+  {{ csrf_field() }}
+  {{ champ(form, "auteur", "Votre nom") }}
+  {{ champ(form, "texte", "Message") }}
+  <button class="bouton">Publier</button>
+</form>
+{% for m in messages %}
+<article class="carte">
+  <p>{{ m.texte }}</p>
+  <p class="meta">{{ m.auteur }}</p>
+</article>
+{% else %}
+<p>Aucun message pour l'instant : soyez le premier !</p>
+{% endfor %}
+</div>
+</section>
+{% endblock %}

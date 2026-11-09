@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block contenu %}
+{% for a in page.items %}
+<article class="carte">
+  <h2><a href="{{ url_for('article', {'id': a.id}) }}">{{ a.titre }}</a></h2>
+  <p class="meta">{{ _("par {nom}, le {date}", {"nom": a.auteur.nom, "date": i18n.date(a.cree_le, "long")}) }}</p>
+  <p>{{ a.texte | truncate(220) }}</p>
+</article>
+{% else %}
+<p>{{ _("Aucun article pour l'instant.") }}</p>
+{% endfor %}
+<nav class="pagination">
+  {% if page.has_prev %}<a href="/?page={{ page.page - 1 }}">← {{ _("plus récents") }}</a>{% endif %}
+  {% if page.has_next %}<a href="/?page={{ page.page + 1 }}">{{ _("plus anciens") }} →</a>{% endif %}
+</nav>
+{% endblock %}

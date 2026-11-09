@@ -1,0 +1,9 @@
+<aside class="barre">
+  <h2>{{ _("À propos") }}</h2>
+  <p>{{ theme.site.slogan }}</p>
+  {% if recents %}
+  <h2>{{ _("Articles récents") }}</h2>
+  <ul>{% for a in recents %}<li><a href="{{ a.url }}">{{ a.titre }}</a></li>{% endfor %}</ul>
+  {% endif %}
+  <a class="bouton" href="/contact">{{ _("Nous contacter") }}</a>
+</aside>

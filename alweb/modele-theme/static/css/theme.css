@@ -1,0 +1,93 @@
+/* Thème « Modern Business » — les couleurs, la police et la largeur viennent de /_theme.css (paramètres). */
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-family: var(--typographie-police); font-size: var(--typographie-taille); line-height: 1.6;
+       color: var(--couleurs-texte); background: var(--couleurs-fond); }
+img { max-width: 100%; height: auto; }
+a { color: var(--couleurs-primaire); }
+h1, h2, h3 { line-height: 1.2; color: var(--couleurs-secondaire); }
+h1 { font-size: clamp(1.9rem, 4vw, 2.8rem); margin: 0 0 .6em; }
+.conteneur { width: min(100% - 32px, var(--mise-en-page-largeur)); margin-inline: auto; }
+.etroit { max-width: 720px; }
+.section { padding: clamp(40px, 7vw, 80px) 0; }
+.section.doux { background: var(--couleurs-doux); }
+.titre-section { font-size: 1.6rem; margin: 0 0 1.2em; }
+.chapeau { font-size: 1.2rem; color: #4a5260; }
+.vide { color: #6b7280; }
+
+.entete { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--couleurs-fond) 92%, transparent);
+          backdrop-filter: blur(8px); border-bottom: 1px solid #e6e8ec; }
+.entete-contenu { display: flex; align-items: center; gap: 16px; min-height: 64px; }
+.marque { display: flex; align-items: center; gap: 10px; font-weight: 700; color: var(--couleurs-secondaire); text-decoration: none; }
+.menu { margin-left: auto; display: flex; gap: 4px; }
+.menu a { padding: 8px 12px; border-radius: 8px; color: var(--couleurs-secondaire); text-decoration: none; }
+.menu a:hover, .menu a[aria-current="page"] { background: var(--couleurs-doux); color: var(--couleurs-primaire); }
+.menu-bouton { display: none; margin-left: auto; width: 44px; height: 44px; padding: 0; border: 1px solid #d6d9df; border-radius: 8px;
+               background: none; color: var(--couleurs-secondaire); cursor: pointer; }
+.menu-bouton:hover { background: var(--couleurs-doux); color: var(--couleurs-primaire); }
+.menu-icone { position: relative; display: block; width: 22px; height: 16px; margin: auto; }
+.menu-icone span { position: absolute; left: 0; width: 100%; height: 2px; border-radius: 2px; background: currentColor;
+                   transition: transform .2s, opacity .2s, top .2s; }
+.menu-icone span:nth-child(1) { top: 0; }
+.menu-icone span:nth-child(2) { top: 7px; }
+.menu-icone span:nth-child(3) { top: 14px; }
+/* Menu ouvert : les trois traits deviennent une croix. */
+.menu-bouton[aria-expanded="true"] .menu-icone span:nth-child(1) { top: 7px; transform: rotate(45deg); }
+.menu-bouton[aria-expanded="true"] .menu-icone span:nth-child(2) { opacity: 0; }
+.menu-bouton[aria-expanded="true"] .menu-icone span:nth-child(3) { top: 7px; transform: rotate(-45deg); }
+@media (prefers-reduced-motion: reduce) { .menu-icone span { transition: none; } }
+
+.hero { padding: clamp(56px, 10vw, 120px) 0; color: #fff;
+        background: linear-gradient(135deg, var(--couleurs-secondaire), color-mix(in srgb, var(--couleurs-secondaire) 55%, var(--couleurs-primaire))); }
+.hero h1 { color: #fff; max-width: 16ch; }
+.hero p { font-size: 1.25rem; max-width: 46ch; opacity: .9; }
+
+.bouton { display: inline-block; padding: 12px 22px; border-radius: 10px; border: 0; font: inherit; font-weight: 600;
+          background: var(--couleurs-primaire); color: #fff; text-decoration: none; cursor: pointer; }
+.bouton:hover { filter: brightness(1.07); }
+.bouton.clair { background: #fff; color: var(--couleurs-secondaire); }
+
+.grille { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.carte { background: var(--couleurs-fond); border: 1px solid #e6e8ec; border-radius: 14px; padding: 24px; }
+.carte h3 { margin: .2em 0 .4em; font-size: 1.2rem; }
+.carte h3 a { color: inherit; text-decoration: none; }
+.carte .lien { font-weight: 600; text-decoration: none; }
+.pastille { display: inline-grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; font-weight: 700;
+            background: color-mix(in srgb, var(--couleurs-primaire) 14%, transparent); color: var(--couleurs-primaire); }
+:not(.grille) > .article + .article { margin-top: 16px; }
+.meta { color: #6b7280; font-size: .9rem; margin: 0; }
+.equipe .personne { text-align: center; }
+.initiale { width: 64px; height: 64px; margin: 0 auto 8px; border-radius: 50%; display: grid; place-items: center;
+            font-size: 1.5rem; font-weight: 700; color: #fff; background: var(--couleurs-primaire); }
+
+.appel { background: var(--couleurs-primaire); color: #fff; }
+.appel-contenu { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; }
+.appel h2 { color: #fff; margin: 0; }
+
+.avec-barre { display: grid; grid-template-columns: 1fr 300px; gap: 40px; align-items: start; }
+.barre { background: var(--couleurs-doux); border-radius: 14px; padding: 20px; }
+.barre h2 { font-size: 1.05rem; }
+.pagination { display: flex; gap: 16px; align-items: center; margin-top: 24px; }
+
+.formulaire { display: grid; gap: 8px; }
+.formulaire label { font-weight: 600; margin-top: 8px; }
+.formulaire input, .formulaire textarea { font: inherit; padding: 10px 12px; border: 1px solid #cfd3da; border-radius: 10px; width: 100%; }
+.formulaire button { justify-self: start; margin-top: 12px; }
+.erreur { color: #b42318; margin: 0; }
+.flash { padding: 12px 16px; border-radius: 10px; background: var(--couleurs-doux); }
+.flash.succes { background: #e7f6ec; color: #1a7f45; }
+.illustration { border-radius: 14px; margin: 16px 0; }
+.erreur-page .code { font-size: 4rem; font-weight: 800; color: var(--couleurs-primaire); margin: 0; }
+
+.pied { background: var(--couleurs-secondaire); color: #d5d8de; padding: 32px 0; }
+.pied-contenu { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center; }
+.pied p { margin: 0; }
+.reseaux { display: flex; gap: 16px; }
+.reseaux a { color: #fff; }
+
+@media (max-width: 760px) {
+  .menu-bouton { display: block; }
+  .menu { display: none; position: absolute; left: 0; right: 0; top: 64px; flex-direction: column; padding: 8px 16px 16px;
+          background: var(--couleurs-fond); border-bottom: 1px solid #e6e8ec; }
+  .menu.ouvert { display: flex; }
+  .avec-barre { grid-template-columns: 1fr; }
+}

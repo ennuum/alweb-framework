@@ -1,0 +1,15 @@
+#!/bin/sh
+# Lanceur de la commande alweb (Linux, macOS, WSL). Pour l'avoir dans le PATH :
+#   ln -s "$PWD/bin/alweb" ~/.local/bin/alweb
+# ALEX : variable ALEX (exécutable), sinon alex, sinon alexc dans le PATH.
+set -e
+ici=$(dirname "$(readlink -f "$0" 2>/dev/null || echo "$0")")
+paquet="$ici/../alweb"
+alex_bin=${ALEX:-}
+if [ -z "$alex_bin" ]; then
+    if command -v alex >/dev/null 2>&1; then alex_bin=alex
+    elif command -v alexc >/dev/null 2>&1; then alex_bin=alexc
+    else echo "alweb: ALEX introuvable (installez-le ou définissez ALEX=/chemin/vers/alex)" >&2; exit 127
+    fi
+fi
+ALWEB_HOME="$paquet" exec "$alex_bin" run "$paquet/commande.al" -- "$@"
