@@ -1,22 +1,33 @@
-# Intégration continue GitHub Actions pour alweb (généré par alexc new).
+# Intégration continue GitHub Actions pour alweb.
+# ALEX est téléchargé depuis les versions publiées de ennuum/alex-lang (archive avec le seul exécutable alexc).
+# Autre version : variable de dépôt ALEX_VERSION (par exemple 1.4.1) ; autre archive : variable ALEX_DIST_URL.
 name: alex
 on: [push, pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      ALEX_VERSION: ${{ vars.ALEX_VERSION || '1.4.0' }}
+      ALEX_DIST_URL: ${{ vars.ALEX_DIST_URL }}
     steps:
       - uses: actions/checkout@v4
       - name: Installer ALEX
         run: |
-          curl -fsSL "$ALEX_DIST_URL" -o alex.tar.gz || { echo "Définissez la variable ALEX_DIST_URL (archive .tar.gz de make package)"; exit 1; }
-          mkdir -p "$HOME/alex" && tar -xzf alex.tar.gz -C "$HOME/alex" --strip-components=1
+          url="${ALEX_DIST_URL:-https://github.com/ennuum/alex-lang/releases/download/v$ALEX_VERSION/alexc-$ALEX_VERSION-linux-x86_64.tar.gz}"
+          curl -fsSL "$url" -o alex.tar.gz
+          mkdir -p "$HOME/alex/bin" && tar -xzf alex.tar.gz -C "$HOME/alex/bin"
+          chmod +x "$HOME/alex/bin/alexc"
           echo "$HOME/alex/bin" >> "$GITHUB_PATH"
-        env:
-          ALEX_DIST_URL: ${{ vars.ALEX_DIST_URL }}
+      - name: Bibliothèques du système (SQLite)
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq libsqlite3-0
+      - name: Version d'ALEX
+        run: alexc --version
       - name: Vérifier la mise en forme
         run: alexc fmt --check .
       - name: Tests
-        run: alexc test --json . | tee resultats-tests.jsonl
+        run: |
+          set -o pipefail
+          alexc test --json . | tee resultats-tests.jsonl
       - uses: actions/upload-artifact@v4
         if: always()
         with:
